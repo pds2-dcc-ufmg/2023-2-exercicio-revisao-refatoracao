@@ -1,9 +1,9 @@
-# Exercício Pull Request
+# Exercício de Revisão e Refatoração
 
-O objetivo dessa atividade é praticar a parte de revisão e refatoração.
+O objetivo dessa atividade é praticar a parte de revisão e refatoração utilizando um sistema de controle de versão.
 
 **Considere a seguinte descrição em alto nível da funcionalidade do código:**  
-Você deve desenvolver um sistema de controle de contas bancárias e um banco para gerenciá-las. Cada conta bancária possui um titular e um saldo. O banco permite adicionar e exibir contas. Cada conta bancária pode realizar operações como depósito e saque.
+> Você deve desenvolver um sistema de controle de contas bancárias e um banco para gerenciá-las. Cada conta bancária possui um titular e um saldo. O banco permite adicionar e exibir contas. Cada conta bancária pode realizar operações como depósito e saque.
 
 O código atual pode ser compilado/executado usando os seguintes comandos:
 ```
