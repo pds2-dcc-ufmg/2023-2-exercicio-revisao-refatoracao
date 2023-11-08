@@ -1,6 +1,5 @@
 #include "Banco.hpp"
 
-Banco::Banco(std::vector<ContaBancaria*> contas): _contas(contas){}
 
 void Banco::adicionarConta(ContaBancaria* conta){
     _contas.push_back(conta);
