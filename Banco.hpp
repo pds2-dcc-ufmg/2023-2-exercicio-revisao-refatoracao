@@ -20,7 +20,7 @@ class Banco {
     
         void exibir_todas_contas() {
             for (ContaBancaria* conta : contas) {
-                std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo <<std::endl;
+                std::cout << "Saldo da conta de " << conta->Get_titular() << ": R$" << conta->Get_saldo() <<std::endl;
             }
         }
 };
