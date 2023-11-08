@@ -11,6 +11,7 @@ using namespace std;
 class Banco {
     private:
         std::vector<ContaBancaria*> contas;
+        //teste commit
 
     public:
         void adicionarConta(ContaBancaria* conta) {
