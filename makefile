@@ -12,3 +12,4 @@ all: $(SOURCES)
 
 clean:
 	rm -f $(EXECUTABLE)
+	
