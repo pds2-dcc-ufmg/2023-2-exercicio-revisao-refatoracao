@@ -15,6 +15,7 @@ class Banco {
 
     public: 
         Banco(std::vector<ContaBancaria*> _contas);
+        
         void adicionarConta(ContaBancaria* conta);
     
         void exibir_todas_contas();
