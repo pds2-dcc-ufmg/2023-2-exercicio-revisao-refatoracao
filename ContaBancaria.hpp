@@ -12,6 +12,7 @@ class ContaBancaria {
 
     public: 
         ContaBancaria (std::string titular, double saldo);
+        virtual ~ContaBancaria();
 
         void depositar(double valor);
 

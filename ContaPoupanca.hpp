@@ -11,6 +11,8 @@ class ContaPoupanca : public ContaBancaria {
     public:
         ContaPoupanca(std::string titular, double saldo, double taxaJuros);
 
+        ~ContaPoupanca();
+
         void calcularJuros();
 
 };

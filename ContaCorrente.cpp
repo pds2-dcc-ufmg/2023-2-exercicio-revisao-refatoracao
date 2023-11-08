@@ -2,6 +2,8 @@
 
 ContaCorrente::ContaCorrente(std::string titular, double saldo, double limiteChequeEspecial): ContaBancaria(titular,saldo) ,_limiteChequeEspecial(limiteChequeEspecial){}
 
+ContaCorrente::~ContaCorrente(){}
+
 void ContaCorrente::usarChequeEspecial(double valor) {
     double saldo = Get_saldo();
     double valorTotal = saldo + _limiteChequeEspecial;

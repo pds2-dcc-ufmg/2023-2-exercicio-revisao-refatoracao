@@ -2,6 +2,8 @@
 
 ContaBancaria::ContaBancaria (std::string titular, double saldo): _titular(titular), _saldo(saldo) {}
 
+ContaBancaria::~ContaBancaria(){}
+
 void ContaBancaria::depositar(double valor){
     if (valor > 0) {
         _saldo += valor;
