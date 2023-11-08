@@ -11,7 +11,8 @@ class ContaBancaria {
         double _saldo;
 
     public: 
-        ContaBancaria (std::string titular, double saldo){}
+        ContaBancaria (std::string titular, double saldo);
+
         void depositar(double valor);
 
         void sacar(double valor);
