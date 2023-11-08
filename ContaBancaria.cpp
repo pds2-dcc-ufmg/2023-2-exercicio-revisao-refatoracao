@@ -7,9 +7,9 @@ ContaBancaria::~ContaBancaria(){}
 void ContaBancaria::depositar(double valor){
     if (valor > 0) {
         _saldo += valor;
-        std::cout << "Depósito de R$" << valor << " efetuado com sucesso.\n";
+        std::cout << "Depósito de R$" << valor << " efetuado com sucesso." << std::endl;
         } else {
-            std::cout << "Valor de depósito inválido.\n";
+            std::cout << "Valor de depósito inválido." << std::endl;
         }
 
 }
@@ -17,9 +17,9 @@ void ContaBancaria::depositar(double valor){
 void ContaBancaria::sacar(double valor){
     if (valor > 0 && valor <= _saldo) {
         _saldo -= valor;
-        std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
+        std::cout << "Saque de R$" << valor << " efetuado com sucesso." << std::endl;
     } else {
-        std::cout << "Saque inválido. Verifique o valor ou saldo insuficiente.\n";
+        std::cout << "Saque inválido. Verifique o valor ou saldo insuficiente." << std::endl;
     }
 }
 

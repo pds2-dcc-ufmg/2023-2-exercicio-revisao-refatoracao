@@ -9,9 +9,9 @@ void ContaCorrente::usarChequeEspecial(double valor) {
     double valorTotal = saldo + _limiteChequeEspecial;
     if (valor > 0 && valor <= valorTotal) {
         saldo -= valor;
-        std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso.\n";
+        std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso." << std::endl;
     } else {
-        std::cout << "Uso de cheque especial inválido. Verifique o valor ou limite.\n";
+        std::cout << "Uso de cheque especial inválido. Verifique o valor ou limite." <<std::endl;
     }
 
 }
