@@ -11,8 +11,17 @@ void ContaBancaria::depositar(double valor) {
         }
 }
 
+bool ContaBancaria::valorValido (double valor){
+    if (valor > 0 && valor <= saldo) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 void ContaBancaria::sacar(double valor) {
-    if (valor > 0 && valor <= this->saldo) {
+    if (valorValido(valor)) {
         saldo -= valor;
         std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
     } 
@@ -36,4 +45,6 @@ void ContaBancaria::setSaldo(double novoSaldo) {
 void ContaBancaria::setTitular(const std::string novoTitular) {
     titular = novoTitular;
 }
+
+
 

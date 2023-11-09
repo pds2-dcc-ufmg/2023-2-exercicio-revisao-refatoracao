@@ -11,6 +11,7 @@ private:
     double saldo;
 public:
     void depositar(double valor);
+    bool valorValido (double valor);
     void sacar(double valor);
     double getSaldo() const;
     std::string getTitular() const;
