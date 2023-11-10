@@ -10,62 +10,81 @@
 int main() {
     Banco meuBanco;
 
-    conta_corrente* conta1 = new conta_corrente();
-    conta1->titular = "Joao";
-    conta1->saldo = 1500;
-    conta1->limiteChequeEspecial = 200;
+    std::vector<ContaBancaria*> contas;
 
-    conta_poupanca* conta2 = new conta_poupanca();
-    conta2->titular = "Maria";
-    conta2->saldo = 1000;
-    conta2->taxaJuros = 2.0;
+    // Criar contas
+    contas.push_back(new ContaCorrente("Joao", 1500, 200));
+    contas.push_back(new ContaPoupanca("Maria", 1000, 2.0));
+    contas.push_back(new ContaPoupanca("Luiz", 3000, 1.5));
+    contas.push_back(new ContaPoupanca("Lara", 2000, 2.5));
+    contas.push_back(new ContaCorrente("Luisa", 5000, 300));
 
-    conta_poupanca* conta3 = new conta_poupanca();
-    conta3->titular = "Luiz";
-    conta3->saldo = 3000;
-    conta3->taxaJuros = 1.5;
+    // Adicionar contas ao banco
+    for (ContaBancaria* conta : contas) {
+        meuBanco.adicionarConta(conta);
+    }
 
-    conta_poupanca* conta4 = new conta_poupanca();
-    conta4->titular = "Lara";
-    conta4->saldo = 2000;
-    conta4->taxaJuros = 2.5;
+    // Exibir informações sobre todas as contas no banco
+    meuBanco.exibirTodasContas();
 
-    conta_corrente* conta5 = new conta_corrente();
-    conta5->titular = "Luisa";
-    conta5->saldo = 5000;
-    conta5->limiteChequeEspecial = 300;
+    contas[0]->depositar(500);
+    contas[1]->sacar(200);
+    contas[2]->sacar(100);
+    contas[3]->depositar(-1);
+    contas[4]->sacar(5001);
 
-    meuBanco.adicionarConta(conta1);
-    meuBanco.adicionarConta(conta2);
-    meuBanco.adicionarConta(conta3);
-    meuBanco.adicionarConta(conta4);
-    meuBanco.adicionarConta(conta5);
+    // Exibir informações após as primeiras operações
+    meuBanco.exibirTodasContas();
 
-    meuBanco.exibir_todas_contas();
 
-    conta1->depositar(500);
-    conta2->sacar(200);
-    conta3->sacar(100);
-    conta4->depositar(-1);
-    conta5->sacar(5001);
+    contas[0]->sacar(500);
+    contas[1]->depositar(200);
+    contas[2]->depositar(100);
+    contas[3]->sacar(300);
+    contas[4]->depositar(50);
 
-    meuBanco.exibir_todas_contas();
 
-    conta1->sacar(500);
-    conta2->depositar(200);
-    conta3->depositar(100);
-    conta4->sacar(300);
-    conta5->depositar(50);
+    // Exibir informações após as segundas operações
+    meuBanco.exibirTodasContas();
 
-    meuBanco.exibir_todas_contas();
+    ContaCorrente* cc0 = dynamic_cast<ContaCorrente*>(contas[0]);
+    if (cc0) {
+        cc0->usarChequeEspecial(500);
+    }
 
-    conta1->usarChequeEspecial(500);
-    conta2->calcularJuros();
-    conta3->calcularJuros();
-    conta4->calcularJuros();
-    conta5->usarChequeEspecial(50);
+    ContaPoupanca* cp1 = dynamic_cast<ContaPoupanca*>(contas[1]);
+    if (cp1) {
+        cp1->adicionarJuros();
+    }
+
+    ContaPoupanca* cp2 = dynamic_cast<ContaPoupanca*>(contas[2]);
+    if (cp2) {
+        cp2->adicionarJuros();
+    }
+
+    ContaPoupanca* cp3 = dynamic_cast<ContaPoupanca*>(contas[3]);
+    if (cp3) {
+        cp3->adicionarJuros();
+    }
+
+    ContaCorrente* cc4 = dynamic_cast<ContaCorrente*>(contas[4]);
+    if (cc4) {
+        cc4->usarChequeEspecial(50);
+    }
+    /*contas[0]->usarChequeEspecial(500);
+    contas[1]->calcularJuros();
+    contas[2]->calcularJuros();
+    contas[3]->calcularJuros();
+    contas[4]->usarChequeEspecial(50);*/
     
-    meuBanco.exibir_todas_contas();
+
+    // Exibir informações após as últimas operações
+    meuBanco.exibirTodasContas();
+
+    // Liberar a memória alocada dinamicamente
+    for (ContaBancaria* conta : contas) {
+        delete conta;
+    }
 
     return 0;
 }

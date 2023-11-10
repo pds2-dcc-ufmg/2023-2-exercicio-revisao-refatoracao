@@ -1,18 +1,21 @@
-#ifndef CONTA_POUPANCA_H
-#define CONTA_POUPANCA_H
+#ifndef ContaPoupanca_H
+#define ContaPoupanca_H
 
 #include <iostream>
 #include "ContaBancaria.hpp"
 
-class conta_poupanca : public ContaBancaria {
-    public:
-        void calcularJuros() {
-            double juros = saldo * taxaJuros / 100;
-            saldo += juros;
-            std::cout << "Juros de R$" << juros << " calculados e adicionados à conta.\n";
-        }
-        double taxaJuros;
+class ContaPoupanca : public ContaBancaria {
+public:
+    ContaPoupanca(const std::string& titular, double saldo, double taxaJuros);
+    virtual ~ContaPoupanca() {};
+    void adicionarJuros();
+    double getTaxaJuros() const;
+    void setTaxaJuros(double taxa);
+
+private:
+    double taxaJuros;
+    double calcularJuros();
 };
 
-
 #endif
+
