@@ -8,24 +8,21 @@
 
 
 int main() {
-    Banco meuBanco;
+    Banco* meuBanco = new Banco;
 
     std::vector<ContaBancaria*> contas;
 
-    // Criar contas
     contas.push_back(new ContaCorrente("Joao", 1500, 200));
     contas.push_back(new ContaPoupanca("Maria", 1000, 2.0));
     contas.push_back(new ContaPoupanca("Luiz", 3000, 1.5));
     contas.push_back(new ContaPoupanca("Lara", 2000, 2.5));
     contas.push_back(new ContaCorrente("Luisa", 5000, 300));
 
-    // Adicionar contas ao banco
     for (ContaBancaria* conta : contas) {
-        meuBanco.adicionarConta(conta);
+        meuBanco->adicionarConta(conta);
     }
-
-    // Exibir informações sobre todas as contas no banco
-    meuBanco.exibirTodasContas();
+    
+    meuBanco->exibirTodasContas();
 
     contas[0]->depositar(500);
     contas[1]->sacar(200);
@@ -33,9 +30,7 @@ int main() {
     contas[3]->depositar(-1);
     contas[4]->sacar(5001);
 
-    // Exibir informações após as primeiras operações
-    meuBanco.exibirTodasContas();
-
+    meuBanco->exibirTodasContas();
 
     contas[0]->sacar(500);
     contas[1]->depositar(200);
@@ -43,9 +38,7 @@ int main() {
     contas[3]->sacar(300);
     contas[4]->depositar(50);
 
-
-    // Exibir informações após as segundas operações
-    meuBanco.exibirTodasContas();
+    meuBanco->exibirTodasContas();
 
     ContaCorrente* cc0 = dynamic_cast<ContaCorrente*>(contas[0]);
     if (cc0) {
@@ -77,14 +70,9 @@ int main() {
     contas[3]->calcularJuros();
     contas[4]->usarChequeEspecial(50);*/
     
+    meuBanco->exibirTodasContas();
 
-    // Exibir informações após as últimas operações
-    meuBanco.exibirTodasContas();
-
-    // Liberar a memória alocada dinamicamente
-    for (ContaBancaria* conta : contas) {
-        delete conta;
-    }
+    delete meuBanco;
 
     return 0;
 }

@@ -8,6 +8,7 @@
 class Banco {
 public:
     void adicionarConta(ContaBancaria* conta);
+    virtual ~Banco(){};
     void exibirTodasContas();
 
 private:
