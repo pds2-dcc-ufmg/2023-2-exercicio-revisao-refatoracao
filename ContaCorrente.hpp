@@ -4,20 +4,16 @@
 #include <iostream>
 #include "ContaBancaria.hpp"
 
-class conta_corrente : public ContaBancaria {
+class ContaCorrente : public ContaBancaria
+{
+
 public:
-void usarChequeEspecial(double valor) {
-        double valorTotal = saldo + limiteChequeEspecial;
-        if (valor > 0 && valor <= valorTotal) {
-            saldo -= valor;
-            std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso.\n";
-        } else {
-            std::cout << "Uso de cheque especial inválido. Verifique o valor ou limite.\n";
-        }
-    }
+    ContaCorrente(std::string titular,double valor,double limite);
+    void usarChequeEspecial(double valor);
+    double getLimiteChequeEspecial();
 
-    double limiteChequeEspecial;
+private:
+    double _limiteChequeEspecial;
 };
-
 
 #endif
