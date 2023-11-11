@@ -16,7 +16,9 @@ public:
     void depositar(double valor);
     void sacar(double valor);
     std::string getTitular() const;
+    void setTitular(std::string titular);
     double getSaldo() const;
+    void setSaldo(double saldo);
 };
 
 #endif

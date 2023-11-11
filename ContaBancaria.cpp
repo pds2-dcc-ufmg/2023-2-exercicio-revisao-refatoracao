@@ -24,6 +24,15 @@ std::string ContaBancaria::getTitular() const {
     return this->_titular;
 }
 
+void ContaBancaria::setTitular(std::string titular) {
+    this->_titular = titular;
+}
+
 double ContaBancaria::getSaldo() const {
     return this->_saldo;
 }
+
+void ContaBancaria::setSaldo(double saldo) {
+    this->_saldo = saldo;
+}
+
