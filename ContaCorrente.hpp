@@ -10,6 +10,8 @@ private:
 public:
     ContaCorrente(std::string titular, double saldo, double limiteChequeEspecial);
     void usarChequeEspecial(double valor);
+    double getLimite() const;
+    void setLimite(double limiteChequeEspecial);
 };
 
 #endif

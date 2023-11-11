@@ -10,6 +10,8 @@ private:
 public:
     ContaPoupanca(std::string titular, double saldo, double taxaJuros);
     void calcularJuros();
+    double getJuros() const;
+    void setJuros(double taxaJuros);
 };
 
 #endif

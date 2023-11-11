@@ -1,7 +1,15 @@
 #include "Banco.hpp"
 
-void Banco::adicionarConta(ContaBancaria* conta) {
+ContaPoupanca* Banco::adicionarContaPoupanca(std::string titular, double saldo, double taxaJuros) {
+    ContaPoupanca* conta = new ContaPoupanca(titular, saldo, taxaJuros);
     this->contas.push_back(conta);
+    return conta;
+}
+
+ContaCorrente* Banco::adicionarContaCorrente(std::string titular, double saldo, double limiteChequeEspecial) {
+    ContaCorrente* conta = new ContaCorrente(titular, saldo, limiteChequeEspecial);
+    this->contas.push_back(conta);
+    return conta;
 }
 
 void Banco::exibirTodasContas() {
