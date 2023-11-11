@@ -20,10 +20,10 @@ void ContaBancaria::sacar(double valor) {
     }
 }
 
-std::string ContaBancaria::getTitular() {
+std::string ContaBancaria::getTitular() const {
     return this->_titular;
 }
 
-double ContaBancaria::getSaldo() {
+double ContaBancaria::getSaldo() const {
     return this->_saldo;
 }

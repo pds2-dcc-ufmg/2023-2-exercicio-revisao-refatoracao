@@ -15,8 +15,8 @@ public:
     ContaBancaria(std::string titular, double saldo);
     void depositar(double valor);
     void sacar(double valor);
-    std::string getTitular();
-    double getSaldo();
+    std::string getTitular() const;
+    double getSaldo() const;
 };
 
 #endif
