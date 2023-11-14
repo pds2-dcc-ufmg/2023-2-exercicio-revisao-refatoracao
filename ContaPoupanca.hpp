@@ -4,14 +4,13 @@
 #include <iostream>
 #include "ContaBancaria.hpp"
 
-class conta_poupanca : public ContaBancaria {
+class ContaPoupanca : public ContaBancaria {
+    private:
+        double _taxa_juros;
+        
     public:
-        void calcularJuros() {
-            double juros = saldo * taxaJuros / 100;
-            saldo += juros;
-            std::cout << "Juros de R$" << juros << " calculados e adicionados à conta.\n";
-        }
-        double taxaJuros;
+        ContaPoupanca(std::string titular, double saldo, double taxa_juros);
+        void calcular_juros();
 };
 
 

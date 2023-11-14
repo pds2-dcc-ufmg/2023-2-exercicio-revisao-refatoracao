@@ -1,71 +1,53 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "ContaBancaria.hpp"
-#include "ContaPoupanca.hpp"
-#include "ContaCorrente.hpp"
 #include "Banco.hpp"
 
 
 int main() {
-    Banco meuBanco;
 
-    conta_corrente* conta1 = new conta_corrente();
-    conta1->titular = "Joao";
-    conta1->saldo = 1500;
-    conta1->limiteChequeEspecial = 200;
+    Banco meu_banco;
 
-    conta_poupanca* conta2 = new conta_poupanca();
-    conta2->titular = "Maria";
-    conta2->saldo = 1000;
-    conta2->taxaJuros = 2.0;
+    //Banco gerencia as contas e sua memória
 
-    conta_poupanca* conta3 = new conta_poupanca();
-    conta3->titular = "Luiz";
-    conta3->saldo = 3000;
-    conta3->taxaJuros = 1.5;
+    ContaCorrente* c1 = meu_banco.criar_conta_corrente("Joao",1500,200);
 
-    conta_poupanca* conta4 = new conta_poupanca();
-    conta4->titular = "Lara";
-    conta4->saldo = 2000;
-    conta4->taxaJuros = 2.5;
+    ContaPoupanca* c2 = meu_banco.criar_conta_poupanca("Maria",1000,2.0);
 
-    conta_corrente* conta5 = new conta_corrente();
-    conta5->titular = "Luisa";
-    conta5->saldo = 5000;
-    conta5->limiteChequeEspecial = 300;
+    ContaPoupanca* c3 = meu_banco.criar_conta_poupanca("Luiz",3000,1.5);
 
-    meuBanco.adicionarConta(conta1);
-    meuBanco.adicionarConta(conta2);
-    meuBanco.adicionarConta(conta3);
-    meuBanco.adicionarConta(conta4);
-    meuBanco.adicionarConta(conta5);
+    ContaPoupanca* c4 = meu_banco.criar_conta_poupanca("Lara",2000,2.5);
 
-    meuBanco.exibir_todas_contas();
+    ContaCorrente* c5 = meu_banco.criar_conta_corrente("Luisa",5000,300);
 
-    conta1->depositar(500);
-    conta2->sacar(200);
-    conta3->sacar(100);
-    conta4->depositar(-1);
-    conta5->sacar(5001);
-
-    meuBanco.exibir_todas_contas();
-
-    conta1->sacar(500);
-    conta2->depositar(200);
-    conta3->depositar(100);
-    conta4->sacar(300);
-    conta5->depositar(50);
-
-    meuBanco.exibir_todas_contas();
-
-    conta1->usarChequeEspecial(500);
-    conta2->calcularJuros();
-    conta3->calcularJuros();
-    conta4->calcularJuros();
-    conta5->usarChequeEspecial(50);
+    meu_banco.exibir_todas_contas();
     
-    meuBanco.exibir_todas_contas();
+    //Acesso geral pelo próprio banco = comportamento geral
+
+    meu_banco.get_conta(1)->depositar(500);
+    meu_banco.get_conta(2)->sacar(200);
+    meu_banco.get_conta(3)->sacar(100);
+    meu_banco.get_conta(4)->depositar(-1);
+    meu_banco.get_conta(5)->sacar(5001);
+
+    meu_banco.exibir_todas_contas();
+
+    meu_banco.get_conta(1)->sacar(500);
+    meu_banco.get_conta(2)->depositar(200);
+    meu_banco.get_conta(3)->depositar(100);
+    meu_banco.get_conta(4)->sacar(300);
+    meu_banco.get_conta(5)->depositar(50);
+
+    meu_banco.exibir_todas_contas();
+
+    //Acesso individual = comportamento específico
+    c1->usar_cheque_especial(500);
+    c2->calcular_juros();
+    c3->calcular_juros();
+    c4->calcular_juros();
+    c5->usar_cheque_especial(50);
+
+    meu_banco.exibir_todas_contas();
 
     return 0;
 }
