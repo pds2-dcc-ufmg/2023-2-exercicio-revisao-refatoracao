@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory> //for smart pointers
 #include "Banco.hpp"
 #include "ContaBancaria.hpp"
 #include "ContaPoupanca.hpp"
@@ -7,36 +8,36 @@
 int main() {
     Banco myBank;
 
-    // Creating and adding accounts
-    ContaCorrente* account1 = new ContaCorrente();
+    // Creating and adding accounts using smart pointers
+    std::unique_ptr<ContaCorrente> account1 = std::make_unique<ContaCorrente>();
     account1->setHolder("Joao");
     account1->setBalance(1500);
     account1->setOverdraftLimit(200);
-    myBank.addAccount(account1);
+    myBank.addAccount(account1.get());
 
-    ContaPoupanca* account2 = new ContaPoupanca();
+    std::unique_ptr<ContaPoupanca> account2 = std::make_unique<ContaPoupanca>();
     account2->setHolder("Maria");
     account2->setBalance(1000);
     account2->setInterestRate(2.0);
-    myBank.addAccount(account2);
+    myBank.addAccount(account2.get());
 
-    ContaPoupanca* account3 = new ContaPoupanca();
+    std::unique_ptr<ContaPoupanca> account3 = std::make_unique<ContaPoupanca>();
     account3->setHolder("Luiz");
     account3->setBalance(3000);
     account3->setInterestRate(1.5);
-    myBank.addAccount(account3);
+    myBank.addAccount(account3.get());
 
-    ContaPoupanca* account4 = new ContaPoupanca();
+    std::unique_ptr<ContaPoupanca> account4 = std::make_unique<ContaPoupanca>();
     account4->setHolder("Lara");
     account4->setBalance(2000);
     account4->setInterestRate(2.5);
-    myBank.addAccount(account4);
+    myBank.addAccount(account4.get());
 
-    ContaCorrente* account5 = new ContaCorrente();
+    std::unique_ptr<ContaCorrente> account5 = std::make_unique<ContaCorrente>();
     account5->setHolder("Luisa");
     account5->setBalance(5000);
     account5->setOverdraftLimit(300);
-    myBank.addAccount(account5);
+    myBank.addAccount(account5.get());
 
     // Displaying all accounts and performing operations on them
     myBank.displayAllAccounts();
