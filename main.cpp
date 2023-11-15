@@ -1,71 +1,70 @@
 #include <iostream>
-#include <string>
-#include <vector>
+#include <memory> //for smart pointers
+#include "Banco.hpp"
 #include "ContaBancaria.hpp"
 #include "ContaPoupanca.hpp"
 #include "ContaCorrente.hpp"
-#include "Banco.hpp"
-
 
 int main() {
-    Banco meuBanco;
+    Banco myBank;
 
-    conta_corrente* conta1 = new conta_corrente();
-    conta1->titular = "Joao";
-    conta1->saldo = 1500;
-    conta1->limiteChequeEspecial = 200;
+    // Creating and adding accounts using smart pointers
+    std::unique_ptr<ContaCorrente> account1 = std::make_unique<ContaCorrente>();
+    account1->setHolder("Joao");
+    account1->setBalance(1500);
+    account1->setOverdraftLimit(200);
+    myBank.addAccount(account1.get());
 
-    conta_poupanca* conta2 = new conta_poupanca();
-    conta2->titular = "Maria";
-    conta2->saldo = 1000;
-    conta2->taxaJuros = 2.0;
+    std::unique_ptr<ContaPoupanca> account2 = std::make_unique<ContaPoupanca>();
+    account2->setHolder("Maria");
+    account2->setBalance(1000);
+    account2->setInterestRate(2.0);
+    myBank.addAccount(account2.get());
 
-    conta_poupanca* conta3 = new conta_poupanca();
-    conta3->titular = "Luiz";
-    conta3->saldo = 3000;
-    conta3->taxaJuros = 1.5;
+    std::unique_ptr<ContaPoupanca> account3 = std::make_unique<ContaPoupanca>();
+    account3->setHolder("Luiz");
+    account3->setBalance(3000);
+    account3->setInterestRate(1.5);
+    myBank.addAccount(account3.get());
 
-    conta_poupanca* conta4 = new conta_poupanca();
-    conta4->titular = "Lara";
-    conta4->saldo = 2000;
-    conta4->taxaJuros = 2.5;
+    std::unique_ptr<ContaPoupanca> account4 = std::make_unique<ContaPoupanca>();
+    account4->setHolder("Lara");
+    account4->setBalance(2000);
+    account4->setInterestRate(2.5);
+    myBank.addAccount(account4.get());
 
-    conta_corrente* conta5 = new conta_corrente();
-    conta5->titular = "Luisa";
-    conta5->saldo = 5000;
-    conta5->limiteChequeEspecial = 300;
+    std::unique_ptr<ContaCorrente> account5 = std::make_unique<ContaCorrente>();
+    account5->setHolder("Luisa");
+    account5->setBalance(5000);
+    account5->setOverdraftLimit(300);
+    myBank.addAccount(account5.get());
 
-    meuBanco.adicionarConta(conta1);
-    meuBanco.adicionarConta(conta2);
-    meuBanco.adicionarConta(conta3);
-    meuBanco.adicionarConta(conta4);
-    meuBanco.adicionarConta(conta5);
-
-    meuBanco.exibir_todas_contas();
-
-    conta1->depositar(500);
-    conta2->sacar(200);
-    conta3->sacar(100);
-    conta4->depositar(-1);
-    conta5->sacar(5001);
-
-    meuBanco.exibir_todas_contas();
-
-    conta1->sacar(500);
-    conta2->depositar(200);
-    conta3->depositar(100);
-    conta4->sacar(300);
-    conta5->depositar(50);
-
-    meuBanco.exibir_todas_contas();
-
-    conta1->usarChequeEspecial(500);
-    conta2->calcularJuros();
-    conta3->calcularJuros();
-    conta4->calcularJuros();
-    conta5->usarChequeEspecial(50);
+    // Displaying all accounts and performing operations on them
+    myBank.displayAllAccounts();
     
-    meuBanco.exibir_todas_contas();
+    account1->deposit(500);
+    account2->withdraw(200);
+    account3->withdraw(100);
+    account4->deposit(-1);
+    account5->withdraw(5001);
+
+    myBank.displayAllAccounts();
+
+    account1->withdraw(500);
+    account2->deposit(200);
+    account3->deposit(100);
+    account4->withdraw(300);
+    account5->deposit(50);
+
+    myBank.displayAllAccounts();
+
+    account1->useOverdraft(500);
+    account2->calculateInterest();
+    account3->calculateInterest();
+    account4->calculateInterest();
+    account5->useOverdraft(50);
+
+    myBank.displayAllAccounts();
 
     return 0;
 }
