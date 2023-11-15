@@ -1,5 +1,3 @@
-// ContaCorrente.hpp
-
 #ifndef CONTA_CORRENTE_H
 #define CONTA_CORRENTE_H
 

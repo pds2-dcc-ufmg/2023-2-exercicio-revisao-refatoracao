@@ -1,5 +1,3 @@
-// Banco.cpp
-
 #include "Banco.hpp"
 
 void Banco::addAccount(ContaBancaria* account) {

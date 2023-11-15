@@ -1,5 +1,3 @@
-// ContaPoupanca.hpp
-
 #ifndef CONTA_POUPANCA_H
 #define CONTA_POUPANCA_H
 

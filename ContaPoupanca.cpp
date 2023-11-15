@@ -1,5 +1,3 @@
-// ContaPoupanca.cpp
-
 #include "ContaPoupanca.hpp"
 
 void ContaPoupanca::calculateInterest() {

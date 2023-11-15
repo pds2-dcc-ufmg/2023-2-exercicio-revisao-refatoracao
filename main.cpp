@@ -7,20 +7,13 @@
 int main() {
     Banco myBank;
 
-    // Creating and adding ContaCorrente accounts
+    // Creating and adding accounts
     ContaCorrente* account1 = new ContaCorrente();
     account1->setHolder("Joao");
     account1->setBalance(1500);
     account1->setOverdraftLimit(200);
     myBank.addAccount(account1);
 
-    ContaCorrente* account5 = new ContaCorrente();
-    account5->setHolder("Luisa");
-    account5->setBalance(5000);
-    account5->setOverdraftLimit(300);
-    myBank.addAccount(account5);
-
-    // Creating and adding ContaPoupanca accounts
     ContaPoupanca* account2 = new ContaPoupanca();
     account2->setHolder("Maria");
     account2->setBalance(1000);
@@ -39,10 +32,15 @@ int main() {
     account4->setInterestRate(2.5);
     myBank.addAccount(account4);
 
-    // Displaying all accounts
-    myBank.displayAllAccounts();
+    ContaCorrente* account5 = new ContaCorrente();
+    account5->setHolder("Luisa");
+    account5->setBalance(5000);
+    account5->setOverdraftLimit(300);
+    myBank.addAccount(account5);
 
-    // Performing operations on accounts
+    // Displaying all accounts and performing operations on them
+    myBank.displayAllAccounts();
+    
     account1->deposit(500);
     account2->withdraw(200);
     account3->withdraw(100);

@@ -1,5 +1,3 @@
-// ContaCorrente.cpp
-
 #include "ContaCorrente.hpp"
 
 void ContaCorrente::useOverdraft(double amount) {

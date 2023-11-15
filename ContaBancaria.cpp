@@ -1,5 +1,3 @@
-// ContaBancaria.cpp
-
 #include "ContaBancaria.hpp"
 
 void ContaBancaria::deposit(double amount) {
