@@ -4,15 +4,21 @@
 #include <iostream>
 #include <vector>
 #include "ContaBancaria.hpp"
+#include "ContaPoupanca.hpp"
+#include "ContaCorrente.hpp"
+
 
 class Banco {
 public:
     void adicionarConta(ContaBancaria* conta);
-    virtual ~Banco(){};
+    virtual ~Banco();
     void exibirTodasContas();
+    ContaPoupanca* adicionarContaPoupanca(std::string titular, double saldo, double taxaJuros);
+    ContaCorrente* adicionarContaCorrente(std::string titular, double saldo, double limiteChequeEspecial);
+
 
 private:
-    std::vector<ContaBancaria*> contas;
+    std::vector<ContaBancaria*> _contas;
 };
 
 #endif
