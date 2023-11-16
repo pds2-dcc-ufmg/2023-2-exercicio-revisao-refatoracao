@@ -1,6 +1,6 @@
 #include "ContaPoupanca.hpp"
 
-ContaPoupanca::ContaPoupanca(const std::string& titular, double saldo, double taxaJuros)
+ContaPoupanca::ContaPoupanca(const std::string &titular, double saldo, double taxaJuros)
     : ContaBancaria(titular, saldo), taxaJuros(taxaJuros) {}
 
 double ContaPoupanca::calcularJuros() {

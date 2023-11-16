@@ -6,7 +6,7 @@
 
 class ContaPoupanca : public ContaBancaria {
 public:
-    ContaPoupanca(const std::string& titular, double saldo, double taxaJuros);
+    ContaPoupanca(const std::string &titular, double saldo, double taxaJuros);
     virtual ~ContaPoupanca() {};
     void adicionarJuros();
     double getTaxaJuros() const;

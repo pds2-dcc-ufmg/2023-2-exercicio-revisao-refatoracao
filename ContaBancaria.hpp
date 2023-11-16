@@ -6,7 +6,7 @@
 
 class ContaBancaria {
 public:
-    ContaBancaria(const std::string& titular, double saldo);
+    ContaBancaria(const std::string &titular, double saldo);
     virtual ~ContaBancaria() {}
     void depositar(double valor);
     void sacar(double valor);

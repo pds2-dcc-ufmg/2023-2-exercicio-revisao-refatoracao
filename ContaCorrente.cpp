@@ -1,6 +1,6 @@
 #include "ContaCorrente.hpp"
 
-ContaCorrente::ContaCorrente(const std::string& titular, double saldo, double limiteChequeEspecial)
+ContaCorrente::ContaCorrente(const std::string &titular, double saldo, double limiteChequeEspecial)
     : ContaBancaria(titular, saldo), limiteChequeEspecial(limiteChequeEspecial) {}
 
 void ContaCorrente::usarChequeEspecial(double valor) {

@@ -14,13 +14,13 @@ void Banco::exibirTodasContas() {
     }
 }
 
-ContaPoupanca* Banco::adicionarContaPoupanca(std::string titular, double saldo, double taxaJuros) {
+ContaPoupanca* Banco::addContaPoupanca(std::string titular, double saldo, double taxaJuros) {
     ContaPoupanca* conta = new ContaPoupanca(titular, saldo, taxaJuros);
     _contas.push_back(conta);
     return conta;
 }
 
-ContaCorrente* Banco::adicionarContaCorrente(std::string titular, double saldo, double limiteChequeEspecial) {
+ContaCorrente* Banco::addContaCorrente(std::string titular, double saldo, double limiteChequeEspecial) {
     ContaCorrente* conta = new ContaCorrente(titular, saldo, limiteChequeEspecial);
     _contas.push_back(conta);
     return conta;

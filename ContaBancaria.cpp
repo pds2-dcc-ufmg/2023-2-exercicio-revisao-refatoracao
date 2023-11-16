@@ -1,6 +1,6 @@
 #include "ContaBancaria.hpp"
 
-ContaBancaria::ContaBancaria(const std::string& titular, double saldo) : titular(titular), saldo(saldo) {}
+ContaBancaria::ContaBancaria(const std::string &titular, double saldo) : titular(titular), saldo(saldo) {}
 
 void ContaBancaria::depositar(double valor) {
     if (valor > 0) {

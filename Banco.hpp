@@ -10,11 +10,11 @@
 
 class Banco {
 public:
-    void adicionarConta(ContaBancaria* conta);
+    void addConta(ContaBancaria* conta);
     virtual ~Banco();
     void exibirTodasContas();
-    ContaPoupanca* adicionarContaPoupanca(std::string titular, double saldo, double taxaJuros);
-    ContaCorrente* adicionarContaCorrente(std::string titular, double saldo, double limiteChequeEspecial);
+    ContaPoupanca* addContaPoupanca(std::string titular, double saldo, double taxaJuros);
+    ContaCorrente* addContaCorrente(std::string titular, double saldo, double limiteChequeEspecial);
 
 
 private:
