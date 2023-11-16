@@ -6,21 +6,16 @@
 #include <vector>
 #include "ContaBancaria.hpp"
 
-using namespace std;
-
 class Banco {
+private:
+    std::vector<ContaBancaria*> contas; //Qual a melhor estrutura de dados?
+
 public:
-    void adicionarConta(ContaBancaria* conta) {
-        contas.push_back(conta);
-    }
-
-    void exibir_todas_contas() {
-        for (ContaBancaria* conta : contas) {
-            std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
-        }
-    }
-
-    std::vector<ContaBancaria*> contas;
+    std::vector<ContaBancaria*> getVectorContas();
+    void adicionar_conta(ContaBancaria* conta);
+    void exibir_todas_contas();
+    ~Banco();
+    
 };
 
 #endif
