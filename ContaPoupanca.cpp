@@ -1,10 +1,10 @@
 #include "ContaPoupanca.hpp"
 
-double conta_poupanca ::getTaxaJuros() const { return this->_taxaJuros; }
+double ContaPoupanca ::getTaxaJuros() const { return this->_taxaJuros; }
 
-conta_poupanca ::conta_poupanca(std::string titular, double saldo, double taxaJuros) : ContaBancaria(titular, saldo), _taxaJuros(taxaJuros) {}
+ContaPoupanca ::ContaPoupanca(std::string titular, double saldo, double taxaJuros) : ContaBancaria(titular, saldo), _taxaJuros(taxaJuros) {}
 
-void conta_poupanca ::calcularJuros()
+void ContaPoupanca ::calcularJuros()
 {
 	double juros = this->getSaldo() * this->getTaxaJuros() / 100;
 	this->setSaldo(this->getSaldo() + juros);

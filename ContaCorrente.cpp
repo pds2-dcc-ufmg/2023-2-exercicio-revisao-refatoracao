@@ -1,10 +1,10 @@
 #include "ContaCorrente.hpp"
 
-conta_corrente ::conta_corrente(std::string titular, double saldo, double limiteChequeEspecial) : ContaBancaria(titular, saldo), _limiteChequeEspecial(limiteChequeEspecial) {}
+ContaCorrente ::ContaCorrente(std::string titular, double saldo, double limiteChequeEspecial) : ContaBancaria(titular, saldo), _limiteChequeEspecial(limiteChequeEspecial) {}
 
-double conta_corrente ::getLimiteChequeEspecial() const { return this->_limiteChequeEspecial; }
+double ContaCorrente ::getLimiteChequeEspecial() const { return this->_limiteChequeEspecial; }
 
-void conta_corrente ::usarChequeEspecial(double valor)
+void ContaCorrente ::usarChequeEspecial(double valor)
 {
 	double valorTotal = this->getSaldo() + _limiteChequeEspecial;
 	if (valor > 0 && valor <= valorTotal)

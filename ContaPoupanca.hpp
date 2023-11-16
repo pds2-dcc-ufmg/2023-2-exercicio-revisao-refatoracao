@@ -4,14 +4,14 @@
 #include <iostream>
 #include "ContaBancaria.hpp"
 
-class conta_poupanca : public ContaBancaria
+class ContaPoupanca : public ContaBancaria
 {
 private:
     double _taxaJuros;
 
 public:
     double getTaxaJuros() const;
-    conta_poupanca(std::string titular, double saldo, double taxaJuros);
+    ContaPoupanca(std::string titular, double saldo, double taxaJuros);
     void calcularJuros();
 };
 
