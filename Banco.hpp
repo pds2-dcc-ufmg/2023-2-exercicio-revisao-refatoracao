@@ -2,25 +2,23 @@
 #define BANCO_H
 
 #include <iostream>
-#include <string>
 #include <vector>
 #include "ContaBancaria.hpp"
+#include "ContaPoupanca.hpp"
+#include "ContaCorrente.hpp"
 
-using namespace std;
 
 class Banco {
 public:
-    void adicionarConta(ContaBancaria* conta) {
-        contas.push_back(conta);
-    }
+    void addConta(ContaBancaria* conta);
+    virtual ~Banco();
+    void exibirTodasContas();
+    ContaPoupanca* addContaPoupanca(std::string titular, double saldo, double taxaJuros);
+    ContaCorrente* addContaCorrente(std::string titular, double saldo, double limiteChequeEspecial);
 
-    void exibir_todas_contas() {
-        for (ContaBancaria* conta : contas) {
-            std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
-        }
-    }
 
-    std::vector<ContaBancaria*> contas;
+private:
+    std::vector<ContaBancaria*> _contas;
 };
 
 #endif
