@@ -1,71 +1,70 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include "ContaBancaria.hpp"
 #include "ContaPoupanca.hpp"
 #include "ContaCorrente.hpp"
 #include "Banco.hpp"
 
+#define SUCCESS 0
 
 int main() {
-    Banco meuBanco;
+    Banco meu_banco; //meu_banco está na pilha e seu destrutor será chamado liberando a memória usada para cada conta
 
-    conta_corrente* conta1 = new conta_corrente();
-    conta1->titular = "Joao";
-    conta1->saldo = 1500;
-    conta1->limiteChequeEspecial = 200;
+    ContaCorrente* conta1 = new ContaCorrente(); //uso de construtores padrao
+    conta1->setTitular("Joao");
+    conta1->setSaldo(1500);
+    conta1->setLimiteChequeEspecial(200);
 
-    conta_poupanca* conta2 = new conta_poupanca();
-    conta2->titular = "Maria";
-    conta2->saldo = 1000;
-    conta2->taxaJuros = 2.0;
+    ContaPoupanca* conta2 = new ContaPoupanca();
+    conta2->setTitular("Maria");
+    conta2->setSaldo(1000);
+    conta2->setTaxaJuros(2.0);
 
-    conta_poupanca* conta3 = new conta_poupanca();
-    conta3->titular = "Luiz";
-    conta3->saldo = 3000;
-    conta3->taxaJuros = 1.5;
+    ContaPoupanca* conta3 = new ContaPoupanca();
+    conta3->setTitular("Luiz");
+    conta3->setSaldo(3000);
+    conta3->setTaxaJuros(1.5);
 
-    conta_poupanca* conta4 = new conta_poupanca();
-    conta4->titular = "Lara";
-    conta4->saldo = 2000;
-    conta4->taxaJuros = 2.5;
+    ContaPoupanca* conta4 = new ContaPoupanca();
+    conta4->setTitular("Lara");
+    conta4->setSaldo(2000);
+    conta4->setTaxaJuros(2.5);
 
-    conta_corrente* conta5 = new conta_corrente();
-    conta5->titular = "Luisa";
-    conta5->saldo = 5000;
-    conta5->limiteChequeEspecial = 300;
+    ContaCorrente* conta5 = new ContaCorrente();
+    conta5->setTitular("Luisa");
+    conta5->setSaldo(5000);
+    conta5->setLimiteChequeEspecial(300);
 
-    meuBanco.adicionarConta(conta1);
-    meuBanco.adicionarConta(conta2);
-    meuBanco.adicionarConta(conta3);
-    meuBanco.adicionarConta(conta4);
-    meuBanco.adicionarConta(conta5);
+    meu_banco.adicionar_conta(conta1);
+    meu_banco.adicionar_conta(conta2);
+    meu_banco.adicionar_conta(conta3);
+    meu_banco.adicionar_conta(conta4);
+    meu_banco.adicionar_conta(conta5);
 
-    meuBanco.exibir_todas_contas();
+    meu_banco.exibir_todas_contas();
 
-    conta1->depositar(500);
-    conta2->sacar(200);
-    conta3->sacar(100);
-    conta4->depositar(-1);
-    conta5->sacar(5001);
+   conta1->depositar(500.0);
+    conta2->sacar(200.0);
+    conta3->sacar(100.0);
+    conta4->depositar(-1.0); // Lida com erro
+    conta5->sacar(5001.0); // Lida com erro
 
-    meuBanco.exibir_todas_contas();
+    meu_banco.exibir_todas_contas();
 
-    conta1->sacar(500);
-    conta2->depositar(200);
-    conta3->depositar(100);
-    conta4->sacar(300);
-    conta5->depositar(50);
+    conta1->sacar(500.0);
+    conta2->depositar(200.0);
+    conta3->depositar(100.0);
+    conta4->sacar(300.0);
+    conta5->depositar(50.0);
 
-    meuBanco.exibir_todas_contas();
+    meu_banco.exibir_todas_contas();
 
-    conta1->usarChequeEspecial(500);
-    conta2->calcularJuros();
-    conta3->calcularJuros();
-    conta4->calcularJuros();
-    conta5->usarChequeEspecial(50);
-    
-    meuBanco.exibir_todas_contas();
+    conta1->usar_cheque_especial(500.0);
+    conta2->calcular_juros();
+    conta3->calcular_juros();
+    conta4->calcular_juros();
+    conta5->usar_cheque_especial(50.0);
 
-    return 0;
+    meu_banco.exibir_todas_contas();
+
+    return SUCCESS;
 }
