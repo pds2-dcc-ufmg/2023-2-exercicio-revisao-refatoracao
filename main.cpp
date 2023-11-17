@@ -8,40 +8,15 @@
 
 
 int main() {
-    Banco meuBanco;
+    Banco* meu_banco = new Banco();
 
-    conta_corrente* conta1 = new conta_corrente();
-    conta1->titular = "Joao";
-    conta1->saldo = 1500;
-    conta1->limiteChequeEspecial = 200;
+    ContaCorrente* conta1 = meu_banco->adicionar_conta_corrente("Joao", 1500, 200);
+    ContaPoupanca* conta2 = meu_banco->adicionar_conta_poupanca("Maria", 1000, 2.0);
+    ContaPoupanca* conta3 = meu_banco->adicionar_conta_poupanca("Luiz", 3000, 1.5);
+    ContaPoupanca* conta4 = meu_banco->adicionar_conta_poupanca("Lara", 2000, 2.5);
+    ContaCorrente* conta5 = meu_banco->adicionar_conta_corrente("Luisa", 5000, 300);
 
-    conta_poupanca* conta2 = new conta_poupanca();
-    conta2->titular = "Maria";
-    conta2->saldo = 1000;
-    conta2->taxaJuros = 2.0;
-
-    conta_poupanca* conta3 = new conta_poupanca();
-    conta3->titular = "Luiz";
-    conta3->saldo = 3000;
-    conta3->taxaJuros = 1.5;
-
-    conta_poupanca* conta4 = new conta_poupanca();
-    conta4->titular = "Lara";
-    conta4->saldo = 2000;
-    conta4->taxaJuros = 2.5;
-
-    conta_corrente* conta5 = new conta_corrente();
-    conta5->titular = "Luisa";
-    conta5->saldo = 5000;
-    conta5->limiteChequeEspecial = 300;
-
-    meuBanco.adicionarConta(conta1);
-    meuBanco.adicionarConta(conta2);
-    meuBanco.adicionarConta(conta3);
-    meuBanco.adicionarConta(conta4);
-    meuBanco.adicionarConta(conta5);
-
-    meuBanco.exibir_todas_contas();
+    meu_banco->exibir_todas_contas();
 
     conta1->depositar(500);
     conta2->sacar(200);
@@ -49,7 +24,7 @@ int main() {
     conta4->depositar(-1);
     conta5->sacar(5001);
 
-    meuBanco.exibir_todas_contas();
+    meu_banco->exibir_todas_contas();
 
     conta1->sacar(500);
     conta2->depositar(200);
@@ -57,15 +32,17 @@ int main() {
     conta4->sacar(300);
     conta5->depositar(50);
 
-    meuBanco.exibir_todas_contas();
+    meu_banco->exibir_todas_contas();
 
-    conta1->usarChequeEspecial(500);
-    conta2->calcularJuros();
-    conta3->calcularJuros();
-    conta4->calcularJuros();
-    conta5->usarChequeEspecial(50);
+    conta1->usar_cheque_especial(500);
+    conta2->calcular_juros();
+    conta3->calcular_juros();
+    conta4->calcular_juros();
+    conta5->usar_cheque_especial(50);
     
-    meuBanco.exibir_todas_contas();
+    meu_banco->exibir_todas_contas();
+
+    delete meu_banco;
 
     return 0;
 }
