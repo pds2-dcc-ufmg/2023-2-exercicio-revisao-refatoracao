@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 
-
 ContaBancaria::ContaBancaria(std::string titular, double saldo) : titular(titular), saldo(saldo) {}
 
 void ContaBancaria::depositar(double valor) {
@@ -36,5 +35,3 @@ void ContaBancaria::set_saldo(double _saldo){
     saldo = _saldo;
 }
 
-
-#endif

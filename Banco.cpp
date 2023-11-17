@@ -16,7 +16,7 @@ ContaCorrente* Banco::adicionar_conta_corrente(std::string titular, double saldo
 
 void Banco::exibir_todas_contas() {
     for (ContaBancaria* conta : contas) {
-        std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
+        std::cout << "Saldo da conta de " << conta->get_titular() << ": R$" << conta->get_saldo() << "\n";
     }
 }
     
