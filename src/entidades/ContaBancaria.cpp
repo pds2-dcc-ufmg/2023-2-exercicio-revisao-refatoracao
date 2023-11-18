@@ -1,8 +1,8 @@
 #include "ContaBancaria.hpp"
 
-unsigned int ContaBancaria::proximoID = 0;
+unsigned int ContaBancaria::_proximoID = 0;
 
-ContaBancaria::ContaBancaria(std::string titular, double saldo) : _ID(this->proximoID++), _titular(titular), _saldo(saldo){};
+ContaBancaria::ContaBancaria(std::string titular, double saldo) : _ID(this->_proximoID++), _titular(titular), _saldo(saldo){};
 
 void ContaBancaria::exibirConta(){
     std::cout << "Saldo da conta de " << this->_titular << ": R$" << this->_saldo << "\n";

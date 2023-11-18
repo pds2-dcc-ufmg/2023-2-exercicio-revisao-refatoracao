@@ -10,7 +10,7 @@ using namespace std;
 
 class Banco {
     private:
-        std::vector<ContaBancaria*> contas;
+        std::vector<ContaBancaria*> _contas;
     public:
         ~Banco();
         void adicionarConta(ContaBancaria* conta);

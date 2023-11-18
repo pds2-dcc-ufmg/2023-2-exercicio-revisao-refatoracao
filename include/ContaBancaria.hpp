@@ -8,7 +8,7 @@
 
 class ContaBancaria {
     private:
-        static unsigned int proximoID;
+        static unsigned int _proximoID;
         unsigned int _ID;
         std::string _titular;
         double _saldo;
