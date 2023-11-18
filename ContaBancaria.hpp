@@ -6,28 +6,27 @@
 #include <vector>
 
 class ContaBancaria {
-public:
-    void depositar(double valor) {
-        if (valor > 0) {
-            saldo += valor;
-            std::cout << "Depósito de R$" << valor << " efetuado com sucesso.\n";
-        } else {
-            std::cout << "Valor de depósito inválido.\n";
-        }
-    }
 
-void sacar(double valor) {
-if (valor > 0 && valor <= saldo) {
-saldo -= valor;
-std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
-} else {
-std::cout << "Saque inválido. Verifique o valor ou saldo insuficiente.\n";
-}
-}
+    //Change atributos privados
+    private:
+	std::string titular;
+	double saldo;
 
+    public:
+	
+	//Change Metodo Construtor
+	ContaBancaria(std::string titular, double saldo);
+	
+	//Change Metodo para atualizar o valor
+	void setSaldo(double valor);
 
-    std::string titular;
-    double saldo;
+	// Change: Metodo para imprimir
+	void printInfo();
+
+	void depositar(double valor);
+
+    	void sacar(double valor);
+
 };
 
 #endif
