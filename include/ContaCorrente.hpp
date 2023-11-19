@@ -14,8 +14,3 @@ public:
 };
 
 #endif
-
-//private double limiteChequeEspecial;
-//pascal case nome 
-//set saldo eget saldo
-//\n

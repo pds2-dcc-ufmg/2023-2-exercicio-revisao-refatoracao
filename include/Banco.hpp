@@ -15,10 +15,3 @@ public:
 };
 
 #endif
-
-//include string a mais
-//tirar using namespace
-//private std::vector<ContaBancaria*> contas;
-//\n->endl
-//snake case ou camel case
-//Const-correctness: Marque o método exibir_todas_contas como constante, pois ele não modifica o objeto.

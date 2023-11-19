@@ -14,9 +14,3 @@ public:
 
 
 #endif
-
-//\n
-//private: double taxaJuros;
-//identacao
-//get saldo e set saldo
-//pascal case nome classe

@@ -21,10 +21,3 @@ public:
 };
 
 #endif
-
-//chave a mais
-//private std::string titular; double saldo;
-//Sacar: identacao
-//espaco a mais
-//endl
-//get e set
