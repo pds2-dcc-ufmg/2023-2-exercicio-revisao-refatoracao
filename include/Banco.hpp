@@ -12,6 +12,7 @@ private:
 public:
     void adicionar_conta(ContaBancaria* conta);
     void exibir_todas_contas() const;
+    void deletar_contas();
 };
 
 #endif

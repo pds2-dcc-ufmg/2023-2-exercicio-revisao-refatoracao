@@ -10,3 +10,9 @@ void Banco::exibir_todas_contas() const {
         << conta->get_saldo() << std::endl;
     }
 }
+
+void Banco::deletar_contas() {
+    for (ContaBancaria* conta : _contas) {
+        delete conta;
+    }
+}

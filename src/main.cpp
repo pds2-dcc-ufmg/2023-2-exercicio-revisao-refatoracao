@@ -48,5 +48,7 @@ int main() {
     
     meuBanco.exibir_todas_contas();
 
+    meuBanco.deletar_contas();
+
     return 0;
 }
