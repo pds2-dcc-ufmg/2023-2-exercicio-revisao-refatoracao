@@ -7,8 +7,8 @@
 class conta_poupanca : public ContaBancaria {
     public:
         void calcularJuros() {
-            double juros = saldo * taxaJuros / 100;
-            saldo += juros;
+            double juros = getSaldo() * taxaJuros / 100;
+            setSaldo(juros);
             std::cout << "Juros de R$" << juros << " calculados e adicionados à conta.\n";
         }
         double taxaJuros;
