@@ -35,7 +35,3 @@ std::string ContaBancaria::get_titular() {
 void ContaBancaria::set_saldo(double valor) {
     _saldo += valor;
 }
-
-void ContaBancaria::set_titular(std::string titular) {
-    _titular = titular;
-}

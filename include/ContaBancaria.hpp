@@ -17,7 +17,6 @@ public:
     double get_saldo();
     std::string get_titular();
     void set_saldo(double valor);
-    void set_titular(std::string titular);
 };
 
 #endif
