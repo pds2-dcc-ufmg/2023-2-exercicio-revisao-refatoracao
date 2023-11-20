@@ -6,21 +6,15 @@
 #include <vector>
 #include "ContaBancaria.hpp"
 
-using namespace std;
-
 class Banco {
-public:
-    void adicionarConta(ContaBancaria* conta) {
-        contas.push_back(conta);
-    }
+    private:
+        std::vector<ContaBancaria*> contas;
 
-    void exibir_todas_contas() {
-        for (ContaBancaria* conta : contas) {
-            std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
-        }
-    }
-
-    std::vector<ContaBancaria*> contas;
+    public:
+        std::vector<ContaBancaria*> get_contas();
+        void set_contas(std::vector<ContaBancaria*> contas);
+        void adicionar_conta(ContaBancaria* conta);
+        void exibir_todas_contas();
 };
 
 #endif
