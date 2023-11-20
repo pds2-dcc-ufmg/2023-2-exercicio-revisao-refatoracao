@@ -1,39 +1,46 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include "ContaBancaria.hpp"
 #include "ContaPoupanca.hpp"
 #include "ContaCorrente.hpp"
 #include "Banco.hpp"
 
 
+#include <stdexcept>
+#include <string>
+#include <iostream>
+
+void tryDeposit(ContaBancaria *conta, double valor){
+    try{
+        conta->depositar(valor);
+    } catch (const std::invalid_argument& e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+void trySacar(ContaBancaria *conta, double valor){
+    try{
+        conta->sacar(valor);
+    } catch (const std::invalid_argument& e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+void tryUsarChequeEspecial(ContaCorrente *conta, double valor){
+    try{
+        conta->usarChequeEspecial(valor);
+    } catch (const std::invalid_argument& e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
 int main() {
     Banco meuBanco;
 
-    conta_corrente* conta1 = new conta_corrente();
-    conta1->setTitular("Joao");
-    conta1->setSaldo(1500);
-    conta1->limiteChequeEspecial = 200;
+    ContaCorrente *conta1 = new ContaCorrente("Joao", 1500, 200);
+    ContaPoupanca *conta2 = new ContaPoupanca("Maria", 1000, 2.0);
+    ContaPoupanca *conta3 = new ContaPoupanca("Luiz", 3000, 1.5);
+    ContaPoupanca *conta4 = new ContaPoupanca("Lara", 2000, 2.5);
+    ContaCorrente *conta5 = new ContaCorrente("Luisa", 5000, 300);
 
-    conta_poupanca* conta2 = new conta_poupanca();
-    conta2->setTitular("Maria");
-    conta2->setSaldo(1000);
-    conta2->taxaJuros = 2.0;
-
-    conta_poupanca* conta3 = new conta_poupanca();
-    conta3->setTitular("Luiz");
-    conta3->setSaldo(3000);
-    conta3->taxaJuros = 1.5;
-
-    conta_poupanca* conta4 = new conta_poupanca();
-    conta4->setTitular("Lara");
-    conta4->setSaldo(2000);
-    conta4->taxaJuros = 2.5;
-
-    conta_corrente* conta5 = new conta_corrente();
-    conta5->setTitular("Luisa");
-    conta5->setSaldo(5000);
-    conta5->limiteChequeEspecial = 300;
 
     meuBanco.adicionarConta(conta1);
     meuBanco.adicionarConta(conta2);
@@ -43,27 +50,28 @@ int main() {
 
     meuBanco.exibir_todas_contas();
 
-    conta1->depositar(500);
-    conta2->sacar(200);
-    conta3->sacar(100);
-    conta4->depositar(-1);
-    conta5->sacar(5001);
+    tryDeposit(conta1, 500);
+    trySacar(conta2, 200);
+    trySacar(conta3, 100);    
+    tryDeposit(conta4, -1);
+    trySacar(conta5, 5001);
 
     meuBanco.exibir_todas_contas();
 
-    conta1->sacar(500);
-    conta2->depositar(200);
-    conta3->depositar(100);
-    conta4->sacar(300);
-    conta5->depositar(50);
-
+    trySacar(conta1, 500);
+    tryDeposit(conta2, 200);
+    tryDeposit(conta3, 100);
+    trySacar(conta4, 300);
+    tryDeposit(conta5, 50);
+    
     meuBanco.exibir_todas_contas();
 
-    conta1->usarChequeEspecial(500);
+    tryUsarChequeEspecial(conta1, 500);
+    
     conta2->calcularJuros();
     conta3->calcularJuros();
     conta4->calcularJuros();
-    conta5->usarChequeEspecial(50);
+    tryUsarChequeEspecial(conta5, 50);
     
     meuBanco.exibir_todas_contas();
 

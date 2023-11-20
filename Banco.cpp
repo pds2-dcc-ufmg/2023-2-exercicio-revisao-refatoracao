@@ -1,11 +1,11 @@
 #include "Banco.hpp"
 
 void Banco::adicionarConta(ContaBancaria* conta) {
-    contas.push_back(conta);
+    _contas.push_back(conta);
 }
 
 std::vector<ContaBancaria*> Banco::getContas() const{
-    return contas;
+    return _contas;
 }
 
 void Banco::exibir_todas_contas() const {

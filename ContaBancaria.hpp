@@ -1,7 +1,6 @@
 #ifndef CONTA_BANCARIA_H
 #define CONTA_BANCARIA_H
 
-#include <iostream>
 #include <string>
 class ContaBancaria {
 private:
@@ -9,6 +8,8 @@ private:
     double _saldo;
 
 public:
+    ContaBancaria();
+    ContaBancaria(std::string, double);
     void depositar(double);
     void sacar(double);
     void printInfo();

@@ -6,7 +6,7 @@
 
 class Banco {
 private:
-    std::vector<ContaBancaria*> contas;
+    std::vector<ContaBancaria*> _contas;
 public:
     void adicionarConta(ContaBancaria*);
     std::vector<ContaBancaria*> getContas() const;
