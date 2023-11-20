@@ -2,11 +2,8 @@
 #define BANCO_H
 
 #include <iostream>
-#include <string>
 #include <vector>
 #include "ContaBancaria.hpp"
-
-using namespace std;
 
 class Banco {
 public:
@@ -14,12 +11,13 @@ public:
         contas.push_back(conta);
     }
 
-    void exibir_todas_contas() {
-        for (ContaBancaria* conta : contas) {
-            std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
+    void exibirTodasContas() const {
+        for (const ContaBancaria* conta : contas) {
+            std::cout << "Saldo da conta de " << conta->getTitular() << ": R$" << conta->getSaldo() << "\n";
         }
     }
 
+private:
     std::vector<ContaBancaria*> contas;
 };
 

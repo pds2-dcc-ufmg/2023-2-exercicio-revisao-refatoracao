@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 
 class ContaBancaria {
 public:
+    ContaBancaria(const std::string& titular) : titular(titular), saldo(0.0) {}
+
     void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
@@ -16,16 +17,24 @@ public:
         }
     }
 
-void sacar(double valor) {
-if (valor > 0 && valor <= saldo) {
-saldo -= valor;
-std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
-} else {
-std::cout << "Saque inválido. Verifique o valor ou saldo insuficiente.\n";
-}
-}
+    void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
+        } else {
+            std::cout << "Saque inválido. Verifique o valor ou saldo insuficiente.\n";
+        }
+    }
 
+    std::string getTitular() const {
+        return titular;
+    }
 
+    double getSaldo() const {
+        return saldo;
+    }
+
+private:
     std::string titular;
     double saldo;
 };
