@@ -11,6 +11,7 @@ public:
     void adicionarConta(ContaBancaria*);
     std::vector<ContaBancaria*> getContas() const;
     void exibir_todas_contas() const;
+    ~Banco();
 };
 
 #endif

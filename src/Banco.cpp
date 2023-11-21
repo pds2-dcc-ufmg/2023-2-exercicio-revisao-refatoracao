@@ -14,3 +14,9 @@ void Banco::exibir_todas_contas() const {
         conta->printInfo();
     }
 }
+
+Banco::~Banco() {
+    for (ContaBancaria* conta : _contas) {
+        delete conta;
+    }
+}
