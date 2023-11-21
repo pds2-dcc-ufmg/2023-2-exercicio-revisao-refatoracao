@@ -1,9 +1,8 @@
 #include "ContaPoupanca.hpp"
 
 double ContaPoupanca::calcularValorJuros(){
-    return this->_saldo * this->_taxa_juros / 100; //consertar 100
+    return this->_saldo * this->_taxa_juros / _PROPORCAO_PERCENTUAL_DECIMAL;
 }
-
 
 ContaPoupanca::ContaPoupanca(std::string titular, double saldo, double taxa_juros) :
     ContaBancaria(titular, saldo), _taxa_juros(taxa_juros) {}
