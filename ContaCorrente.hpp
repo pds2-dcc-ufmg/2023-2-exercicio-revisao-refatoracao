@@ -2,21 +2,19 @@
 #define CONTA_CORRENTE_H
 
 #include <iostream>
+#include <string>
 #include "ContaBancaria.hpp"
 
-class conta_corrente : public ContaBancaria {
-public:
-void usarChequeEspecial(double valor) {
-        double valorTotal = saldo + limiteChequeEspecial;
-        if (valor > 0 && valor <= valorTotal) {
-            saldo -= valor;
-            std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso.\n";
-        } else {
-            std::cout << "Uso de cheque especial inválido. Verifique o valor ou limite.\n";
-        }
-    }
+class ContaCorrente : public ContaBancaria {
 
-    double limiteChequeEspecial;
+    //change: deixar o atributo privado
+    private:
+        double limiteChequeEspecial;
+
+    public:
+        ContaCorrente(std::string titular, double saldo, double lce):ContaBancaria(titular,saldo), limiteChequeEspecial(lce){};
+        void usarChequeEspecial(double valor);
+
 };
 
 
