@@ -4,15 +4,15 @@
 
 
 int main() {
-    Banco meuBanco;
+    Banco meu_banco;
 
-    ContaCorrente* conta1 = meuBanco.criarContaCorrente("Joao", 1500, 200);
-    ContaPoupanca* conta2 = meuBanco.criarContaPoupanca("Maria", 1000, 2.0);
-    ContaPoupanca* conta3 = meuBanco.criarContaPoupanca("Luiz", 3000, 1.5);
-    ContaPoupanca* conta4 = meuBanco.criarContaPoupanca("Lara", 2000, 2.5);
-    ContaCorrente* conta5 = meuBanco.criarContaCorrente("Luisa", 5000, 300);
+    ContaCorrente* conta1 = meu_banco.criarContaCorrente("Joao", 1500, 200);
+    ContaPoupanca* conta2 = meu_banco.criarContaPoupanca("Maria", 1000, 2.0);
+    ContaPoupanca* conta3 = meu_banco.criarContaPoupanca("Luiz", 3000, 1.5);
+    ContaPoupanca* conta4 = meu_banco.criarContaPoupanca("Lara", 2000, 2.5);
+    ContaCorrente* conta5 = meu_banco.criarContaCorrente("Luisa", 5000, 300);
 
-    meuBanco.exibirTodasContas();
+    meu_banco.exibirTodasContas();
 
     conta1->depositar(500);
     conta2->sacar(200);
@@ -20,7 +20,7 @@ int main() {
     conta4->depositar(-1);
     conta5->sacar(5001);
 
-    meuBanco.exibirTodasContas();
+    meu_banco.exibirTodasContas();
 
     conta1->sacar(500);
     conta2->depositar(200);
@@ -28,7 +28,7 @@ int main() {
     conta4->sacar(300);
     conta5->depositar(50);
 
-    meuBanco.exibirTodasContas();
+    meu_banco.exibirTodasContas();
 
     conta1->usarChequeEspecial(500);
     conta2->calcularJuros();
@@ -36,7 +36,7 @@ int main() {
     conta4->calcularJuros();
     conta5->usarChequeEspecial(50);
     
-    meuBanco.exibirTodasContas();
+    meu_banco.exibirTodasContas();
 
     return 0;
 }
