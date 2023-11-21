@@ -14,9 +14,9 @@ public:
     double getSaldo();
     void setSaldo(double _saldo);
     std::string getTitular();
+    void setTitular(std::string _titular);
     void depositar(double valor);
     void sacar(double valor);
     virtual ~ContaBancaria();
 };
-
 #endif

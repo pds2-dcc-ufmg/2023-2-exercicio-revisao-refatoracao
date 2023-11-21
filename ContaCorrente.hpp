@@ -5,12 +5,14 @@
 
 class ContaCorrente : public ContaBancaria {
 private:
-double limiteChequeEspecial;
+    double valorTotal;
+    double limiteChequeEspecial;
 public:
-ContaCorrente(std::string _titular, double _saldo,double limite);
-void usarChequeEspecial(double valor);
-double getLimiteChequeEspecial();
-~ContaCorrente();
+    void setValorTotal();
+    ContaCorrente(std::string _titular, double _saldo,double _limiteChequeEspecial);
+    void usarChequeEspecial(double valor);
+    double getLimiteChequeEspecial();
+    ~ContaCorrente();
 };
 
 
