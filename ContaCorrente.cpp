@@ -6,11 +6,11 @@ ContaCorrente::ContaCorrente(std::string titular, double saldo, double limiteChe
 ContaCorrente::~ContaCorrente(){}
 
 void ContaCorrente::usarChequeEspecial(double valor) {
-    double saldoAtual = getSaldo();
-    double valorTotal = saldoAtual + _limiteChequeEspecial;
-    if (valor > 0 && valor <= valorTotal) {
-        saldoAtual -= valor;
-        setSaldo(saldoAtual);
+    double _saldoAtual = getSaldo();
+    double _valorTotal = _saldoAtual + _limiteChequeEspecial;
+    if (valor > 0 && valor <= _valorTotal) {
+        _saldoAtual -= valor;
+        setSaldo(_saldoAtual);
         std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso.\n";
     } else {    
         std::cout << "Uso de cheque especial inválido. Verifique o valor ou limite.\n";

@@ -6,11 +6,11 @@ ContaPoupanca::ContaPoupanca(std::string titular, double saldo, double taxaJuros
 ContaPoupanca::~ContaPoupanca(){}
 
 void ContaPoupanca::calcularJuros() {
-    double saldo_poupanca = getSaldo();         
-    double juros = saldo_poupanca * _taxaJuros / 100;
-    saldo_poupanca += juros;
-    setSaldo(saldo_poupanca);
-    std::cout << "Juros de R$" << juros << " calculados e adicionados à conta.\n";
+    double _saldoPoupanca = getSaldo();         
+    double _juros = _saldoPoupanca * _taxaJuros / 100;
+    _saldoPoupanca += _juros;
+    setSaldo(_saldoPoupanca);
+    std::cout << "Juros de R$" << _juros << " calculados e adicionados à conta.\n";
 }
 
 //Implementação vazia apenas para funcionamento correto das mudanças na main

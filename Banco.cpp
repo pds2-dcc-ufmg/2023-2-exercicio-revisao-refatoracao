@@ -4,27 +4,27 @@
 Banco::Banco(){}
 
 void Banco::adicionarConta(ContaBancaria* conta) {
-        contas.push_back(conta);
+        _contas.push_back(conta);
     }
 
 void Banco::exibirTodasContas() {
-    for (ContaBancaria* conta : contas) {
-        std::cout << "Saldo da conta de " << conta->getTitular() << ": R$" << conta->getSaldo() << "\n";
+    for (ContaBancaria* _conta : _contas) {
+        std::cout << "Saldo da conta de " << _conta->getTitular() << ": R$" << _conta->getSaldo() << "\n";
     }
 }
 
 void Banco::sacarConta(int conta, double valor){
-    contas[conta]->sacar(valor);
+    _contas[conta]->sacar(valor);
 }
 
 void Banco::chequeConta(int conta, double valor){
-    contas[conta]->usarChequeEspecial(valor);
+    _contas[conta]->usarChequeEspecial(valor);
 }
 
 void Banco::jurosConta(int conta){
-    contas[conta]->calcularJuros();
+    _contas[conta]->calcularJuros();
 }
 
 void Banco::depositarConta(int conta, double valor){
-    contas[conta]->depositar(valor);
+    _contas[conta]->depositar(valor);
 }
