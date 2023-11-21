@@ -7,12 +7,11 @@
 class ContaPoupanca : public ContaBancaria {
 private:
     double _taxa_juros;
-    ContaBancaria conta_bancaria;
 
 public:
-    ContaPoupanca(double taxa_juros);
+    ContaPoupanca(std::string titular, double saldo, double taxa_juros);
     void calcular_juros();
-    double get_taxa_juros();
+    double get_taxa_juros() const;
     void set_taxa_juros(double nova_taxa);
 
 };

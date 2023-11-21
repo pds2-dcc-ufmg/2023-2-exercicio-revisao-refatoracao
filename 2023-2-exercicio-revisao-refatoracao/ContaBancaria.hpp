@@ -11,10 +11,11 @@ private:
     double _saldo;
 
 public:
+    ContaBancaria(std::string titular, double saldo);
     void depositar(double valor);
     void sacar(double valor);
-    std::string get_titular();
-    double get_saldo();
+    std::string get_titular() const;
+    double get_saldo() const;
     void set_saldo(double novo_saldo);
 
 };
