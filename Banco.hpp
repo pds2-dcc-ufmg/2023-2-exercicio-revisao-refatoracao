@@ -9,18 +9,13 @@
 using namespace std;
 
 class Banco {
-public:
-    void adicionarConta(ContaBancaria* conta) {
-        contas.push_back(conta);
-    }
+    private:
+        vector<ContaBancaria*> _contas;
 
-    void exibir_todas_contas() {
-        for (ContaBancaria* conta : contas) {
-            std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
-        }
-    }
+    public:
+        void adicionarConta(ContaBancaria* conta);
+        void exibirTodasContas();
 
-    std::vector<ContaBancaria*> contas;
 };
 
 #endif
