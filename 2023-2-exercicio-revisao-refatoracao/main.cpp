@@ -8,7 +8,7 @@
 
 
 int main() {
-    Banco meuBanco;
+    Banco meu_banco;
     double taxa_juros, limite_cheque_especial;
 
     ContaCorrente* conta1 = new ContaCorrente(limite_cheque_especial);
@@ -37,13 +37,13 @@ int main() {
     conta5->set_limite_cheque_especial(300);
 
 
-    meuBanco.adicionar_conta(conta1);
-    meuBanco.adicionar_conta(conta2);
-    meuBanco.adicionar_conta(conta3);
-    meuBanco.adicionar_conta(conta4);
-    meuBanco.adicionar_conta(conta5);
+    meu_banco.adicionar_conta(conta1);
+    meu_banco.adicionar_conta(conta2);
+    meu_banco.adicionar_conta(conta3);
+    meu_banco.adicionar_conta(conta4);
+    meu_banco.adicionar_conta(conta5);
 
-    meuBanco.exibir_todas_contas();
+    meu_banco.exibir_todas_contas();
 
     conta1->depositar(500);
     conta2->sacar(200);
@@ -51,7 +51,7 @@ int main() {
     conta4->depositar(-1);
     conta5->sacar(5001);
 
-    meuBanco.exibir_todas_contas();
+    meu_banco.exibir_todas_contas();
 
     conta1->sacar(500);
     conta2->depositar(200);
@@ -59,7 +59,7 @@ int main() {
     conta4->sacar(300);
     conta5->depositar(50);
 
-    meuBanco.exibir_todas_contas();
+    meu_banco.exibir_todas_contas();
 
     conta1->usar_cheque_especial(500);
     conta2->calcular_juros();
@@ -67,7 +67,13 @@ int main() {
     conta4->calcular_juros();
     conta5->usar_cheque_especial(50);
     
-    meuBanco.exibir_todas_contas();
+    meu_banco.exibir_todas_contas();
+
+    delete conta1;
+    delete conta2;
+    delete conta3;
+    delete conta4;
+    delete conta5;
 
     return 0;
 }
