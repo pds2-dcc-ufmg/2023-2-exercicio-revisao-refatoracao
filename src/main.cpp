@@ -1,7 +1,7 @@
-#include "ContaBancaria.hpp"
-#include "ContaPoupanca.hpp"
-#include "ContaCorrente.hpp"
-#include "Banco.hpp"
+#include "../include/ContaBancaria.hpp"
+#include "../include/ContaPoupanca.hpp"
+#include "../include/ContaCorrente.hpp"
+#include "../include/Banco.hpp"
 
 
 #include <stdexcept>

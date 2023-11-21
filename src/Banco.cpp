@@ -1,4 +1,4 @@
-#include "Banco.hpp"
+#include "../include/Banco.hpp"
 
 void Banco::adicionarConta(ContaBancaria* conta) {
     _contas.push_back(conta);
