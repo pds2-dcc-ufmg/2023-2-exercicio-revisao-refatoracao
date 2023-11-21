@@ -1,26 +1,18 @@
 #ifndef BANCO_H
 #define BANCO_H
-
 #include <iostream>
 #include <string>
 #include <vector>
 #include "ContaBancaria.hpp"
 
-using namespace std;
-
 class Banco {
+
+private:
+    std::vector<ContaBancaria *> contas;
+
 public:
-    void adicionarConta(ContaBancaria* conta) {
-        contas.push_back(conta);
-    }
+    void adicionar_conta(ContaBancaria *conta);
+    void exibir_todas_contas();
 
-    void exibir_todas_contas() {
-        for (ContaBancaria* conta : contas) {
-            std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
-        }
-    }
-
-    std::vector<ContaBancaria*> contas;
 };
-
 #endif
