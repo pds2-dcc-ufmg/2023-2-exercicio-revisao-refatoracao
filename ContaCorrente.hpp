@@ -1,14 +1,21 @@
-#ifndef CONTA_CORRENTE_H
-#define CONTA_CORRENTE_H
+#ifndef CONTACORRENTE_H
+#define CONTACORRENTE_H
 
 #include <iostream>
 #include "ContaBancaria.hpp"
 
-class conta_corrente : public ContaBancaria {
+class ContaCorrente : public ContaBancaria {
 private:
-    double limiteChequeEspecial;
+    double limite_cheque_especial;
+
 public:
-    ContaCorrente(std::string titular, double saldo, double limiteChequeEspecial);
-    void usarChequeEspecial(double valor);
+    ContaCorrente(std::string titular, double saldo, double limite_cheque_especial);
+
+    void usar_cheque_especial(double valor);
+
+
+  double get_limite_cheque_especial() const;
+  void set_limite_cheque_especial(double limite_cheque_especial);
+
 };
 #endif
