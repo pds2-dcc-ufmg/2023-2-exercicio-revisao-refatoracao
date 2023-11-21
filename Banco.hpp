@@ -10,13 +10,13 @@ using namespace std;
 
 class Banco {
 
-private:
-	std::vector<ContaBancaria*> contas;
+    private:
+        std::vector<ContaBancaria*> contas;
 
-public:
-    void adicionarConta(ContaBancaria* conta);
+    public:
+        void adicionarConta(ContaBancaria* conta);
 
-    void exibir_todas_contas();
+        void exibir_todas_contas();
 
 };
 

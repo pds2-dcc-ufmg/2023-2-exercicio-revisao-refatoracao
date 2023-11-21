@@ -1,12 +1,8 @@
-#include "ContaPoupanca"
+#include "ContaPoupanca.hpp"
 
-ContaPoupanca::ContaPoupanca(std::string titular, double saldo, double tj){
-    ContaBancaria(titular,saldo);
-    taxaJuros = tj;
-}
 
 void ContaPoupanca::calcularJuros(){
-    double juros = saldo * taxaJuros / 100;
-    saldo += juros;
+    double juros = getSaldo() * taxaJuros / 100;
+    setSaldo(juros);
     std::cout << "Juros de R$" << juros << " calculados e adicionados à conta.\n";
 }

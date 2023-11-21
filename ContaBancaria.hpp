@@ -7,25 +7,25 @@
 
 class ContaBancaria {
 
-    //Change atributos privados
+    //Change: deixar os atributos privados
     private:
-	std::string titular;
-	double saldo;
+		std::string titular;
+		double saldo;
 
     public:
-	
-	//Change Metodo Construtor
-	ContaBancaria(std::string titular, double saldo);
-	
-	//Change Metodo para atualizar o valor
-	void setSaldo(double valor);
+		
+		//Change: Metodo Construtor
+		ContaBancaria(std::string titular, double saldo);
 
-	// Change: Metodo para imprimir
-	void printInfo();
+		//Change Metodos para retornar e atualizar o valor
+		double getSaldo();
+		void setSaldo(double valor);
 
-	void depositar(double valor);
+		// Change: Metodo para imprimir
+		virtual void printInfo();
 
-    	void sacar(double valor);
+		void depositar(double valor);
+		void sacar(double valor);
 
 };
 

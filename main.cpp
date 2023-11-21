@@ -10,15 +10,15 @@
 int main() {
     Banco meuBanco;
 
-    ContaBancaria* conta1 = new ContaCorrente("Joao",1500,200);
+    ContaCorrente* conta1 = new ContaCorrente("Joao",1500,200);
 
-    ContaBancaria* conta2 = new ContaPoupanca("Maria",1000,2.0);
+    ContaPoupanca* conta2 = new ContaPoupanca("Maria",1000,2.0);
 
-    ContaBancaria* conta3 = new ContaPoupanca("Luiz",3000,1.5);
+    ContaPoupanca* conta3 = new ContaPoupanca("Luiz",3000,1.5);
 
-    ContaBancaria* conta4 = new ContaPoupanca("Lara",2000,2.5);
+    ContaPoupanca* conta4 = new ContaPoupanca("Lara",2000,2.5);
 
-    ContaBancaria* conta5 = new ContaCorrente("Luisa",5000,300);
+    ContaCorrente* conta5 = new ContaCorrente("Luisa",5000,300);
 
     meuBanco.adicionarConta(conta1);
     meuBanco.adicionarConta(conta2);

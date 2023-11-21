@@ -1,8 +1,12 @@
-#include "ContaBancaria"
+#include "ContaBancaria.hpp"
 
 ContaBancaria::ContaBancaria(std::string titular, double saldo){
-	titular = titular;
-	saldo = saldo;
+	this->titular = titular;
+	this->saldo = saldo;
+}
+
+double ContaBancaria::getSaldo(){
+    return saldo;
 }
 
 void ContaBancaria::setSaldo(double valor){

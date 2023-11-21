@@ -7,11 +7,12 @@
 
 class ContaPoupanca : public ContaBancaria {
 
+    //change: deixar o atributo privado
     private:
         double taxaJuros;
 
     public:
-        ContaPoupanca::ContaPoupanca(std::string titular, double saldo, double tj);
+        ContaPoupanca(std::string titular, double saldo, double tj): ContaBancaria(titular,saldo), taxaJuros(tj){};
         void calcularJuros();
 };
 
