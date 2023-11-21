@@ -7,27 +7,17 @@
 
 class ContaBancaria {
 public:
-    void depositar(double valor) {
-        if (valor > 0) {
-            saldo += valor;
-            std::cout << "Depósito de R$" << valor << " efetuado com sucesso.\n";
-        } else {
-            std::cout << "Valor de depósito inválido.\n";
-        }
-    }
+    void depositar(double valor);
+    void sacar(double valor);
+    std::string getTitular();
+    double getSaldo();
+    void setTitular(std::string titular);
+    void setSaldo(double saldo);
 
-void sacar(double valor) {
-if (valor > 0 && valor <= saldo) {
-saldo -= valor;
-std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
-} else {
-std::cout << "Saque inválido. Verifique o valor ou saldo insuficiente.\n";
-}
-}
-
-
-    std::string titular;
-    double saldo;
+protected:
+    std::string _titular;
+    double _saldo;
 };
 
 #endif
+
