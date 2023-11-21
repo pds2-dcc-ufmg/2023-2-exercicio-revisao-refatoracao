@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
 
 class ContaBancaria {
     private:
@@ -17,10 +16,10 @@ class ContaBancaria {
 
 
     public:
-        ContaBancaria(std::string &titular, double saldo);
+        ContaBancaria(std::string titular, double saldo);
         virtual ~ContaBancaria() = 0;
 
-        void depositar(double valor);
+        void depositar(double valor);   
         void sacar(double valor);
 
         void exibirInfo();

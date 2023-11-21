@@ -4,6 +4,14 @@ void Banco::adicionarConta(ContaBancaria* conta) {
     this->_contas.push_back(conta);
 }
 
+
+Banco::~Banco(){
+    for (ContaBancaria* conta : this->_contas) {
+        delete conta;
+    }
+}
+
+
 ContaCorrente* Banco::criarContaCorrente(std::string titular, double saldo, double limite_cheque_especial){
     ContaCorrente* nova_conta = new ContaCorrente(titular, saldo, limite_cheque_especial);
     this->adicionarConta(nova_conta);

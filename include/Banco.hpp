@@ -14,6 +14,8 @@ class Banco {
 
 
     public:
+        ~Banco();
+
         ContaCorrente* criarContaCorrente(std::string titular, double saldo, double limite_cheque_especial);
         ContaPoupanca* criarContaPoupanca(std::string titular, double saldo, double taxa_juros);
 

@@ -10,7 +10,7 @@ class ContaCorrente : public ContaBancaria {
 
 
     public:
-        ContaCorrente(std::string &titular, double saldo, double limite_cheque_especial);
+        ContaCorrente(std::string titular, double saldo, double limite_cheque_especial);
         void usarChequeEspecial(double valor);
         
 };

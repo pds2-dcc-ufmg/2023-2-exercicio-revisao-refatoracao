@@ -5,7 +5,7 @@ bool ContaCorrente::checarLimiteSuficiente(double valor){
 }
 
 
-ContaCorrente::ContaCorrente(std::string &titular, double saldo, double limite_cheque_especial) : 
+ContaCorrente::ContaCorrente(std::string titular, double saldo, double limite_cheque_especial) : 
     ContaBancaria(titular, saldo), _limite_cheque_especial(limite_cheque_especial) {}
 
 
@@ -15,6 +15,6 @@ void ContaCorrente::usarChequeEspecial(double valor){
         return;
     }
 
-    this->_saldo -= valor; //trocar isso
+    this->_saldo -= valor;
     std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso.\n";
 }

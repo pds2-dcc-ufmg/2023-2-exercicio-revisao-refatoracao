@@ -11,7 +11,7 @@ bool ContaBancaria::checarSaldoSuficiente(double valor) {
 }
 
 
-ContaBancaria::ContaBancaria(std::string &titular, double saldo) : 
+ContaBancaria::ContaBancaria(std::string titular, double saldo) : 
     _titular(titular), _saldo(saldo) {}
 
 
