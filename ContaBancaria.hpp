@@ -1,33 +1,30 @@
-#ifndef CONTA_BANCARIA_H
-#define CONTA_BANCARIA_H
-
 #include <iostream>
 #include <string>
 #include <vector>
 
+#ifndef CONTA_BANCARIA_H
+#define CONTA_BANCARIA_H
+
 class ContaBancaria {
+    std::string _titular;
+    double _saldo;
+
 public:
-    void depositar(double valor) {
-        if (valor > 0) {
-            saldo += valor;
-            std::cout << "Depósito de R$" << valor << " efetuado com sucesso.\n";
-        } else {
-            std::cout << "Valor de depósito inválido.\n";
-        }
-    }
+    ContaBancaria(std::string titular, double saldo);
 
-void sacar(double valor) {
-if (valor > 0 && valor <= saldo) {
-saldo -= valor;
-std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
-} else {
-std::cout << "Saque inválido. Verifique o valor ou saldo insuficiente.\n";
-}
-}
+    virtual ~ContaBancaria();
 
+    std::string getTitular() const;
 
-    std::string titular;
-    double saldo;
+    double getSaldo() const;
+
+    void alterarSaldo(double valor);
+
+    void depositar(double valor);
+
+    void sacar(double valor);
+
+    void printInfo() const;
 };
 
 #endif
