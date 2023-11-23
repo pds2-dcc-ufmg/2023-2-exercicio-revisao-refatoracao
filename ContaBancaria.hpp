@@ -9,7 +9,7 @@ public:
     ContaBancaria(const std::string& titular, double saldo);
     void depositar(double valor);
     void sacar(double valor);
-    void exibirSaldo() const;
+    void printSaldo() const;
 
 protected:
     std::string titular;

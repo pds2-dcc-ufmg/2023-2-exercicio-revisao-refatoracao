@@ -4,13 +4,14 @@
 #include <vector>
 #include "ContaBancaria.hpp"
 
+
 class Banco {
 public:
     void adicionarConta(ContaBancaria* conta);
     void exibirTodasContas();
 
 private:
-    std::vector<ContaBancaria*> contas;
+    std::vector<ContaBancaria*> _contas;
 };
 
 #endif

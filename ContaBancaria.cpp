@@ -20,6 +20,6 @@ void ContaBancaria::sacar(double valor) {
     }
 }
 
-void ContaBancaria::exibirSaldo() const {
+void ContaBancaria::printSaldo() const {
     std::cout << "Saldo da conta de " << titular << ": R$" << saldo << "\n";
 }

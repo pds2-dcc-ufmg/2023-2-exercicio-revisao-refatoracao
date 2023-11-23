@@ -1,11 +1,17 @@
 #include "Banco.hpp"
 
 void Banco::adicionarConta(ContaBancaria* conta) {
-    contas.push_back(conta);
+    _contas.push_back(conta);
 }
 
 void Banco::exibirTodasContas() {
-    for (ContaBancaria* conta : contas) {
-        conta->exibirSaldo();
+    for (ContaBancaria* conta : _contas) {
+        conta->printSaldo();
+    }
+}
+
+Banco::~Banco(){
+    for (ContaBancaria *conta: _contas){
+        delete (conta);
     }
 }
