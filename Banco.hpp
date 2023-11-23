@@ -6,8 +6,6 @@
 #include <vector>
 #include "ContaBancaria.hpp"
 
-using namespace std;
-
 class Banco {
 private:
     std::vector<ContaBancaria*> contas;
