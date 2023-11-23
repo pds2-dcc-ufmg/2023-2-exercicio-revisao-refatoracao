@@ -22,7 +22,7 @@ int main() {
     meuBanco.adicionarConta(conta4);
     meuBanco.adicionarConta(conta5);
 
-    meuBanco.exibir_todas_contas();
+    meuBanco.exibirTodasContas();
 
     conta1->depositar(500);
     conta2->sacar(200);
@@ -30,7 +30,7 @@ int main() {
     conta4->depositar(-1);
     conta5->sacar(5001);
 
-    meuBanco.exibir_todas_contas();
+    meuBanco.exibirTodasContas();
 
     conta1->sacar(500);
     conta2->depositar(200);
@@ -38,7 +38,7 @@ int main() {
     conta4->sacar(300);
     conta5->depositar(50);
 
-    meuBanco.exibir_todas_contas();
+    meuBanco.exibirTodasContas();
 
     conta1->usarChequeEspecial(500);
     conta2->calcularJuros();
@@ -46,7 +46,7 @@ int main() {
     conta4->calcularJuros();
     conta5->usarChequeEspecial(50);
     
-    meuBanco.exibir_todas_contas();
+    meuBanco.exibirTodasContas();
 
     return 0;
 }

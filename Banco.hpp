@@ -11,7 +11,7 @@ private:
     std::vector<ContaBancaria*> contas;
 public:
     void adicionarConta(ContaBancaria* conta);
-    void exibir_todas_contas();
+    void exibirTodasContas();
     ~Banco();
 };
 
