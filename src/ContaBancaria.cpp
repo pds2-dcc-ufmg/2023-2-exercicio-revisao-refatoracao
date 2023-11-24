@@ -45,7 +45,7 @@ void ContaBancaria::depositar(double valor) {
 
 void ContaBancaria::sacar(double valor) {
     if (valor > 0 && valor <= getSaldo()) {
-        setSaldo(-valor);
+        setSaldo(getSaldo() -valor);
         std::cout << "Saque de R$" << valor << " efetuado com sucesso.\n";
         return;
     }
