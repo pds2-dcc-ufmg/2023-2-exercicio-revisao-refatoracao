@@ -1,3 +1,14 @@
+Considerações:
+
+As classes conta_corrente, conta_poupanca devem seguir a convenção de nomenclatura que é usar letras minúsculas e underscores para separar palavras. Portanto, tornam-se ContaCorrente e ContaPoupanca;
+
+Os membros das classes (titular, saldo, limiteChequeEspecial, taxaJuros) estão públicos. Modifiquei para serem privados e criei métodos de acesso (getters e setters);
+
+Houve a separação das implementações das classes em arquivos .cpp correspondentes aos headers.
+
+Não havia liberação de memória para os objetos criados no main.cpp, utilizei o delete.
+
+
 # Exercício de Revisão e Refatoração
 
 O objetivo dessa atividade é praticar a parte de revisão e refatoração utilizando um sistema de controle de versão.
