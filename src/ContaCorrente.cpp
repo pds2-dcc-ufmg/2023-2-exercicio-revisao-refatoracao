@@ -26,7 +26,7 @@ void ContaCorrente::setLimiteChequeEspecial(double limiteChequeEspecial){
 void ContaCorrente::usarChequeEspecial(double valor) {
     double valorTotal = getSaldo() + getLimiteChequeEspecial();
     if (valor > 0 && valor <= valorTotal) {
-        setSaldo(-valor);
+        setSaldo( getSaldo() -valor );
         std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso.\n";
         return;
     }
