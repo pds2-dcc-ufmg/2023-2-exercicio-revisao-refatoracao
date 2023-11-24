@@ -1,0 +1,48 @@
+1 - Modularização:
+	Separei a especificação(contrato) da implementação, criando um arquivo .cpp para cada arquivo de cabeçalho.
+	
+2 - Atributos: 
+	Troquei os modificadores de acesso dos atributos de public para private.
+	Colocando um UnderScore( _ ) antes de cada nome de atributo para fins de melhor identificação.	
+
+3 - Indentação:
+	Utilizei tab para obter um melhor espaçamento e manter uma "boa narartiva de código" (melhorando a legibilidade).
+
+4 - Exceções:
+	Inclui Exceções na Classe ContaBancaria de forma a tratar melhor os dois casos excepcionais de valor inválido em depositar e saldo invélido em sacar.
+
+5 - Nomenclatura:
+	Em ContaCorrente troquei o nome da classe de forma a manter a padronização CamelCase no código.
+
+6 - Getters:
+	Criação de métodos get para retornar dados privados da classe base ContaBancaria para classes derivadas ContaCorrente e ContaPoupanca, além da classe Banco.
+	Criação de métodos get para retornar dados privados das classes derivadas.
+
+7 - Setters:
+	Criação de métodos set para modificar dados privados da classe base ContaBancaria para classes derivadas ContaCorrente e ContaPoupanca, além da classe Banco.
+	Criação de métodos set para modificar dados privados das classes derivadas.
+
+8 - Ordem de Precedência:
+	Foi imposto no cálculo de juros em ContaPoupanca uma ordem para efetuação das operações.
+
+9 - Using Namespace std:
+	Retirado por ser desnecessário o uso total do escopo, sendo utilizado o operador de resolução de escopo em todo o programa quando necessário, 
+	a fins de maior legibilidade, coerência e evitar conflitos.
+
+10 - Uso do Ponteiro This. 
+
+11 - Criação de Construtores e Destrutores.
+	Inicialização de atributos.
+	Destrutor da classe base ContaBancaria definido como virtual.
+
+12 - Modificações no main para adequar as modifcações no código.
+	Passando argumentos para o construtor.
+	Tratando Exceções com Try e Catch.
+
+13 - Desalocação de memória.
+	Delete de cada conta no fim do programa.
+
+14 - Criação de Diretórios.
+	Todos os arquivos de cabeçalho colocados na pasta include e todos os arquivos de origem na pasta src(Source).
+
+15 - Novo código de compilação incluído no READ.ME: g++ -I ./include src/*.cpp -o vpl_exec
