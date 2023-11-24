@@ -1,6 +1,5 @@
 #ifndef BANCO_H
 #define BANCO_H
-
 #include "ContaBancaria.hpp"
 
 class Banco {
