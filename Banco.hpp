@@ -6,20 +6,12 @@
 #include <vector>
 #include "ContaBancaria.hpp"
 
-using namespace std;
-
 class Banco {
-public:
-    void adicionarConta(ContaBancaria* conta) {
-        contas.push_back(conta);
-    }
-
-    void exibir_todas_contas() {
-        for (ContaBancaria* conta : contas) {
-            std::cout << "Saldo da conta de " << conta->titular << ": R$" << conta->saldo << "\n";
-        }
-    }
-
+ public:
+    void adicionar_conta(ContaBancaria* conta);
+    void exibir_todas_contas();
+    
+ private:
     std::vector<ContaBancaria*> contas;
 };
 
