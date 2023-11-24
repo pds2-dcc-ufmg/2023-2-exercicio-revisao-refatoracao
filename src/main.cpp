@@ -1,6 +1,6 @@
-#include "include/Banco.hpp"
-#include "include/ContaPoupanca.hpp"
-#include "include/ContaCorrente.hpp"
+#include "../include/Banco.hpp"
+#include "../include/ContaPoupanca.hpp"
+#include "../include/ContaCorrente.hpp"
 
 int main() {
     std::vector<ContaBancaria*> contas;

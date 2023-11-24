@@ -7,8 +7,8 @@ class ContaCorrente : public ContaBancaria {
 private:
     double _limiteChequeEspecial;
 public:
-    ContaCorrente::ContaCorrente(const std::string& titular, double saldo, double limiteChequeEspecial);
-    ContaCorrente::~ContaCorrente();
+    ContaCorrente(const std::string& titular, double saldo, double limiteChequeEspecial);
+    ~ContaCorrente();
 
     void usarChequeEspecial(double valor);
     double get_limiteChequeEspecial() const;
