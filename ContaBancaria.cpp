@@ -17,7 +17,7 @@ void ContaBancaria::setTitular(std::string _titular){
 void ContaBancaria::setSaldo(double _saldo){
     this->saldo=_saldo;
 }
-
+//realiza deposito de um valor
 void ContaBancaria::depositar(double valor) {
     if (valor > 0) {
         this->saldo += valor;
@@ -27,7 +27,7 @@ void ContaBancaria::depositar(double valor) {
         std::cout << "Valor de depósito inválido.\n";
     }
 }
-
+//realiza o saque de um valor
 void ContaBancaria::sacar(double valor){
     if (valor > 0 && valor <= this->saldo) {
         this->saldo -= valor;

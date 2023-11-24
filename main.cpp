@@ -2,22 +2,17 @@
 #include "ContaPoupanca.hpp"
 #include "ContaCorrente.hpp"
 #include "Banco.hpp"
-
+#include <iostream> 
 
 int main() {
     Banco meuBanco;
 
     ContaCorrente* conta1 = new ContaCorrente("Joao",1500,200);
-
     ContaPoupanca* conta2 = new ContaPoupanca("Maria",1000, 2.0);
-   
     ContaPoupanca* conta3 = new ContaPoupanca( "Luiz",3000,1.5);
-
     ContaPoupanca* conta4 = new ContaPoupanca("Lara",2000,2.5);
-   
     ContaCorrente* conta5 = new ContaCorrente("Luisa",5000,300);
     
-
     meuBanco.adicionarConta(conta1);
     meuBanco.adicionarConta(conta2);
     meuBanco.adicionarConta(conta3);
@@ -48,5 +43,12 @@ int main() {
     conta4->calcularJuros();
     conta5->usarChequeEspecial(50);
     meuBanco.exibir_todas_contas(); 
+
+    delete conta1;
+    delete conta2;
+    delete conta3;
+    delete conta4;
+    delete conta5;
+
     return 0;
 }

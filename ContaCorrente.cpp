@@ -4,10 +4,11 @@ ContaCorrente::ContaCorrente(std::string _titular, double _saldo,double _limiteC
     this->setValorTotal();
 }
 
+//define o valor tota usado para o cheque especial
  void ContaCorrente::setValorTotal(){
     this->valorTotal= this->getSaldo() + limiteChequeEspecial;
 }
-
+//usa o cheque especial e da print no valor e se teve sucesso
 void ContaCorrente::usarChequeEspecial(double valor){
     if (valor > 0 && valor <= this->valorTotal) {
         setSaldo(this->getSaldo() - valor);
