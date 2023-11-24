@@ -6,7 +6,7 @@ ContaCorrente::ContaCorrente(const std::string& titular, double saldoInicial, do
 void ContaCorrente::usarChequeEspecial(double valor) {
     double valorTotal = getSaldo() + limiteChequeEspecial;
     if (valor > 0 && valor <= valorTotal) {
-        // Usando métodos da classe base
+        
         sacar(valor);
         std::cout << "Uso de cheque especial de R$" << valor << " efetuado com sucesso.\n";
     } else {

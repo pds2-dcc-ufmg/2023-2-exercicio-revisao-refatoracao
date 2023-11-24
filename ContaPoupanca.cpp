@@ -5,7 +5,7 @@ ContaPoupanca::ContaPoupanca(const std::string& titular, double saldoInicial, do
 
 void ContaPoupanca::calcularJuros() {
     double juros = getSaldo() * taxaJuros / 100;
-    // Usando métodos da classe base
+    
     depositar(juros);
     std::cout << "Juros de R$" << juros << " calculados e adicionados à conta.\n";
 }
