@@ -44,11 +44,5 @@ int main() {
     conta5->usarChequeEspecial(50);
     meuBanco.exibir_todas_contas(); 
 
-    delete conta1;
-    delete conta2;
-    delete conta3;
-    delete conta4;
-    delete conta5;
-
     return 0;
 }

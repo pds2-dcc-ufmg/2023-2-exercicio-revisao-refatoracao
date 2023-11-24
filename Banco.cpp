@@ -12,4 +12,8 @@ void Banco::exibir_todas_contas(){
     }
 }
 
-Banco::~Banco(){}
+Banco::~Banco(){
+    for (unsigned int i=0;i<this->contas.size();i++){
+        delete contas[i];
+    }
+}
